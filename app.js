@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
@@ -13,6 +14,7 @@ const sellRouter = require('./routes/sells');
 
 const app = express();
 
+app.use(helmet());
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
