@@ -7,6 +7,9 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const workersRouter = require('./routes/workers');
+const cutRouter = require('./routes/cut');
+const cropRouter = require('./routes/crops');
+const sellRouter = require('./routes/sells');
 
 const app = express();
 
@@ -20,5 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/workers', workersRouter);
+app.use('/cuts', cutRouter);
+app.use('/crops', cropRouter);
+app.use('/sells', sellRouter);
 
 module.exports = app;
